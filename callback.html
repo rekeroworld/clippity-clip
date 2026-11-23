@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>clippity clip - TikTok authorization</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>body{font-family:sans-serif;max-width:640px;margin:40px auto;padding:0 16px}code,textarea{width:100%;word-break:break-all}</style>
+</head>
+<body>
+<h1>clippity clip</h1>
+<p>TikTok authorization result. This page only displays the values TikTok returned so the owner can paste them into their own local app. Nothing is sent or stored.</p>
+<p><strong>Authorization code:</strong></p>
+<textarea id="code" rows="3" readonly></textarea>
+<p><strong>State:</strong></p>
+<textarea id="state" rows="1" readonly></textarea>
+<p><strong>Error (if any):</strong></p>
+<textarea id="err" rows="1" readonly></textarea>
+<p><a href="index.html">Back to clippity clip</a> | <a href="terms.html">Terms</a> | <a href="privacy.html">Privacy</a></p>
+<script>
+var p = new URLSearchParams(window.location.search);
+document.getElementById('code').value = p.get('code') || '';
+document.getElementById('state').value = p.get('state') || '';
+document.getElementById('err').value = p.get('error_description') || p.get('error') || '';
+</script>
+</body>
+</html>
